@@ -1,120 +1,121 @@
+/* styles.css */
+
 /* Basic Styles */
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(45deg, #ff00cc, #3300ff, #ffcc00, #00ffcc);
-  background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
-  color: #fff;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-}
-
-h1 {
-  font-size: 3rem;
-  color: #fff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), -2px -2px 5px rgba(0, 0, 0, 0.5);
-  margin-top: 20px;
-  text-transform: uppercase;
-}
-
-input, button {
-  padding: 15px 30px;
-  margin: 10px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  transition: 0.3s ease;
-}
-
-input:focus, button:hover {
-  transform: scale(1.1);
-  background-color: #ff00cc;
-  cursor: pointer;
-}
-
-/* Table Styles */
-table {
-  margin: 20px auto;
-  border-collapse: collapse;
-  width: 60%; /* Adjust table width for better mobile view */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
-}
-
-th, td {
-  border: 2px solid #fff;
-  padding: 10px;
-  text-align: center;
-}
-
-th {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-}
-
-td {
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Add animation to the background gradient */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #ff00cc, #3300ff, #ffcc00, #00ffcc);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Footer Styles */
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
-  color: white;
-  text-align: left;
-  padding: 10px 20px;
-  font-size: 1rem;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
-  z-index: 1000; /* Ensures footer is on top */
-}
-
-/* Mobile Styles */
-@media screen and (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-
+  
+  /* 3D effect on the header */
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), -2px -2px 5px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    text-transform: uppercase;
   }
-
+  
+  /* Style the input and button */
   input, button {
-    width: 100%;
-    font-size: 1rem;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    transition: 0.3s ease;
   }
-
+  
+  input:focus, button:hover {
+    transform: scale(1.1);
+    background-color: #ff00cc;
+    cursor: pointer;
+  }
+  
+  /* Add 3D effect to the table */
   table {
-    width: 100%; /* Make the table full width on mobile */
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
   }
-
+  
   th, td {
-    font-size: 1rem; /* Make the text in table smaller on mobile */
-    padding: 8px; /* Reduce padding for better fit */
+    border: 2px solid #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  
+  td {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Add animation to the background gradient */
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   footer {
-    padding: 8px 10px; /* Adjust footer padding for smaller screens */
-    font-size: 0.9rem; /* Adjust font size of footer text */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    color: white;
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 1rem;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+    z-index: 1000; /* Ensures footer is on top */
   }
-}
+  
+  /* Mobile Styles */
+  @media screen and (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    input, button {
+      width: 100%;
+      font-size: 1rem;
+    }
+  
+    table {
+      width: 100%;
+    }
+  
+    th, td {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Footer Styles */
+
+  
