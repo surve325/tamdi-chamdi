@@ -4,10 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Traditional Words with Music</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Traditional Words with Music</title>
-  <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS -->
+  <link rel="stylesheet" href="style.css"> <!-- External CSS -->
   <style>
     body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
     input, button { padding: 10px; margin: 5px; }
@@ -18,7 +15,7 @@
 <body>
   <!-- Audio Element -->
   <audio id="backgroundMusic" autoplay loop>
-    <source src="https://drive.google.com/file/d/13sdUmtmYjkS7GXBVXvSO8OAPeuWU1-P9/view?usp=drive_link" type="audio/mpeg">
+    <source src="https://docs.google.com/uc?export=download&id=YOUR_FILE_ID" type="audio/mpeg"> <!-- Replace with actual ID -->
     Your browser does not support the audio element.
   </audio>
 
@@ -36,7 +33,8 @@
     <tbody id="wordList"></tbody>
   </table>
   <script>
-    const apiUrl = "https://docs.google.com/spreadsheets/d/1rr-rb0eoff0kh2jU2kKB5X-X5hubfkh5d1l147O81RI/edit?usp=sharing"; // Replace with your Web App URL
+    // Use your Web App URL here
+    const apiUrl = "https://script.google.com/macros/s/YOUR_WEB_APP_ID/exec"; 
 
     // Fetch existing words from the spreadsheet
     async function fetchWords() {
@@ -85,6 +83,4 @@
 
     // Load words on page load
     fetchWords();
-  </script>
-</body>
-</html>
+ 
