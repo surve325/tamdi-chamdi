@@ -1,0 +1,83 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #f8f9fa; /* Light background color */
+    color: #333; /* Dark text color */
+  }
+  
+  /* Header Styles */
+  h1 {
+    font-size: 2.5rem;
+    color: #007bff; /* Blue color for the title */
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #6c757d; /* Gray color for subtitles */
+  }
+  
+  /* Input and Button Styles */
+  input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    width: 60%;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff; /* Blue button */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Table Styles */
+  table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 50%;
+    background-color: #fff;
+  }
+  
+  th, td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #007bff;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  td {
+    color: #495057;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    input[type="text"] {
+      width: 80%;
+    }
+  
+    table {
+      width: 90%;
+    }
+  }
+  
