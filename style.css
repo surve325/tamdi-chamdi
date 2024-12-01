@@ -77,6 +77,20 @@ body {
       background-position: 0% 50%;
     }
   }
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    color: white;
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 1rem;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+    z-index: 1000; /* Ensures footer is on top */
+  }
   
   /* Mobile Styles */
   @media screen and (max-width: 600px) {
@@ -101,4 +115,7 @@ body {
       font-size: 1.2rem;
     }
   }
+
+  /* Footer Styles */
+
   

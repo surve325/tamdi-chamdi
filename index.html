@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="style.css"> <!-- Link to the new CSS file -->
 </head>
 <body>
-  <h1>Night Out dictionary</h1>
+  <h1>Night Out Dictionary</h1>
   <audio id="audioPlayer" controls>
-    <source src="audio/song.mp3" type="audio/mp3">
+    <source src="./song/Tambdi.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
   
@@ -19,6 +19,7 @@
       audioPlayer.play(); // This will trigger autoplay once the page is loaded
     };
   </script>
+
   <p>Add a new word to the list below!</p>
   <input type="text" id="wordInput" placeholder="Enter a word" />
   <button onclick="addWord()">Add Word</button>
@@ -26,11 +27,17 @@
   <table>
     <thead>
       <tr>
-        <th> <i>Total New Words in dictionary</i></th>
+        <th><i>Total New Words in dictionary</i></th>
       </tr>
     </thead>
     <tbody id="wordList"></tbody>
   </table>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>Created by Mahesh Surve</p>
+  </footer>
+
   <script>
     const apiUrl = "https://script.google.com/macros/s/AKfycbxLIoG6qRrNUjfHmO8gcqfmtYhgnpJf7qGM54YbU6qsVacrA8v1J7dLz2DaL65cdfYjSw/exec"; // Replace with your URL
 
