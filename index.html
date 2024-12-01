@@ -1,79 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Traditional Words</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin: 20px;
-      }
-      input,
-      button {
-        padding: 10px;
-        margin: 5px;
-      }
-      table {
-        margin: 20px auto;
-        border-collapse: collapse;
-        width: 50%;
-      }
-      th,
-      td {
-        border: 1px solid #ddd;
-        padding: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Traditional Word</h1>
-    <p>Add a new word to the list below!</p>
-    <input type="text" id="wordInput" placeholder="Enter a word" />
-    <button onclick="addWord()">Add Word</button>
-    <h2>Total Words: <span id="wordCount">0</span></h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Word</th>
-        </tr>
-      </thead>
-      <tbody id="wordList"></tbody>
-    </table>
-    <script>
-      const apiUrl = "https://docs.google.com/spreadsheets/d/1rr-rb0eoff0kh2jU2kKB5X-X5hubfkh5d1l147O81RI/edit?gid=0#gid=0"; // Replace with your URL
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traditional Words Change Code</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+    input, button { padding: 10px; margin: 5px; }
+    table { margin: 20px auto; border-collapse: collapse; width: 50%; }
+    th, td { border: 1px solid #ddd; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Traditional Words</h1>
+  <p>Add a new word to the list below!</p>
+  <input type="text" id="wordInput" placeholder="Enter a word" />
+  <button onclick="addWord()">Add Word</button>
+  <h2>Total Words: <span id="wordCount">0</span></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Word</th>
+      </tr>
+    </thead>
+    <tbody id="wordList"></tbody>
+  </table>
+  <script>
+    const apiUrl = "YOUR_GOOGLE_SCRIPT_WEB_APP_URL"; // Replace with your Web App URL
 
-      // Fetch existing words from the spreadsheet
-      async function fetchWords() {
+    // Fetch existing words from the spreadsheet
+    async function fetchWords() {
+      try {
         const response = await fetch(apiUrl);
         const words = await response.json();
         const wordList = document.getElementById("wordList");
         wordList.innerHTML = "";
-        words.forEach((word) => {
+        words.forEach(word => {
           wordList.innerHTML += `<tr><td>${word}</td></tr>`;
         });
         document.getElementById("wordCount").innerText = words.length;
+      } catch (error) {
+        console.error("Error fetching words:", error);
+        alert("An error occurred while fetching the word list.");
       }
+    }
 
-      // Add a new word to the spreadsheet
-      async function addWord() {
-        const wordInput = document.getElementById("wordInput").value.trim();
-        if (wordInput) {
-          await fetch(apiUrl, {
+    // Add a new word to the spreadsheet
+    async function addWord() {
+      const wordInput = document.getElementById("wordInput").value.trim();
+      if (wordInput) {
+        try {
+          const response = await fetch(apiUrl, {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: `word=${encodeURIComponent(wordInput)}`,
           });
-          document.getElementById("wordInput").value = "";
-          fetchWords(); // Refresh the word list
-        } else {
-          alert("Please enter a valid word!");
-        }
-      }
 
-      // Load words on page load
-      fetchWords();
-    </script>
-  </body>
+          const result = await response.text();
+          console.log(result); // Debugging: Check for success message
+          if (result.includes("Word added successfully")) {
+            document.getElementById("wordInput").value = '';
+            fetchWords(); // Refresh the word list
+          } else {
+            alert("Failed to add word. Please try again.");
+          }
+        } catch (error) {
+          console.error("Error adding word:", error);
+          alert("An error occurred while adding the word.");
+        }
+      } else {
+        alert("Please enter a valid word!");
+      }
+    }
+
+    // Load words on page load
+    fetchWords();
+  </script>
+</body>
 </html>
