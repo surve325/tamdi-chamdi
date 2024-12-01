@@ -14,20 +14,20 @@
 </head>
 <body>
   <!-- Audio Element -->
-  <audio id="backgroundMusic" autoplay loop>
-    <audio id="backgroundMusic" autoplay muted loop>
-      <source src="./song/Tambdi.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    <button onclick="unmuteAudio()">Play Music</button>
-    <script>
-      function unmuteAudio() {
-        const audio = document.getElementById('backgroundMusic');
-        audio.muted = false;
-      }
-    </script>
-    
+  <audio id="backgroundMusic" autoplay muted loop>
+    <source src="./song/Tambdi.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
+  
+  <!-- Button to unmute and start the music -->
+  <button onclick="unmuteAudio()">Play Music</button>
+  
+  <script>
+    function unmuteAudio() {
+      const audio = document.getElementById('backgroundMusic');
+      audio.muted = false;  // Unmute the audio when the button is clicked
+    }
+  </script>
 
   <h1>Traditional Words 12</h1>
   <p>Add a new word to the list below!</p>
@@ -42,8 +42,8 @@
     </thead>
     <tbody id="wordList"></tbody>
   </table>
+  
   <script>
-    // Use your Web App URL here
     const apiUrl = "https://script.google.com/macros/s/1rr-rb0eoff0kh2jU2kKB5X-X5hubfkh5d1l147O81RI/exec"; 
 
     // Fetch existing words from the spreadsheet
@@ -93,4 +93,6 @@
 
     // Load words on page load
     fetchWords();
- 
+  </script>
+</body>
+</html>
