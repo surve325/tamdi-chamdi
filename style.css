@@ -1,6 +1,6 @@
 /* styles.css */
 
-/* Apply a gradient 3D color effect to the background */
+/* Basic Styles */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(45deg, #ff00cc, #3300ff, #ffcc00, #00ffcc);
@@ -75,6 +75,30 @@ body {
     }
     100% {
       background-position: 0% 50%;
+    }
+  }
+  
+  /* Mobile Styles */
+  @media screen and (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    input, button {
+      width: 100%;
+      font-size: 1rem;
+    }
+  
+    table {
+      width: 100%;
+    }
+  
+    th, td {
+      font-size: 1.2rem;
     }
   }
   
