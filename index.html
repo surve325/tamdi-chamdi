@@ -8,10 +8,17 @@
 </head>
 <body>
   <h1>Traditional Words</h1>
-  <audio controls autoplay muted>
+  <audio id="audioPlayer" controls>
     <source src="audio/song.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
+  
+  <script>
+    window.onload = function() {
+      var audioPlayer = document.getElementById("audioPlayer");
+      audioPlayer.play(); // This will trigger autoplay once the page is loaded
+    };
+  </script>
   <p>Add a new word to the list below!</p>
   <input type="text" id="wordInput" placeholder="Enter a word" />
   <button onclick="addWord()">Add Word</button>
