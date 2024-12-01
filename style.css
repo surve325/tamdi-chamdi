@@ -92,29 +92,30 @@ body {
     z-index: 1000; /* Ensures footer is on top */
   }
   
-  /* Mobile Styles */
-  @media screen and (max-width: 600px) {
-    body {
-      padding: 10px;
-    }
-  
-    h1 {
-      font-size: 2rem;
-    }
-  
-    input, button {
-      width: 100%;
-      font-size: 1rem;
-    }
-  
-    table {
-      width: 100%;
-    }
-  
-    th, td {
-      font-size: 1.2rem;
-    }
+/* Mobile Styles */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 10px;
   }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  input, button {
+    width: 100%; /* Make both input and button take full width */
+    font-size: 1rem;
+    margin: 5px 0; /* Add a little margin for spacing */
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th, td {
+    font-size: 1.2rem;
+  }
+}
 
   /* Footer Styles */
 
