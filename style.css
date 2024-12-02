@@ -1,122 +1,120 @@
-/* styles.css */
-
 /* Basic Styles */
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(45deg, #ff00cc, #3300ff, #ffcc00, #00ffcc);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-  }
-  
-  /* 3D effect on the header */
-  h1 {
-    font-size: 3rem;
-    color: #fff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), -2px -2px 5px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
-    text-transform: uppercase;
-  }
-  
-  /* Style the input and button */
-  input, button {
-    padding: 15px 30px;
-    margin: 10px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    transition: 0.3s ease;
-  }
-  
-  input:focus, button:hover {
-    transform: scale(1.1);
-    background-color: #ff00cc;
-    cursor: pointer;
-  }
-  
-  /* Add 3D effect to the table */
-  table {
-    margin: 20px auto;
-    border-collapse: collapse;
-    width: 50%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
-  }
-  
-  th, td {
-    border: 2px solid #fff;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  th {
-    font-size: 1.2rem;
-    text-transform: uppercase;
-  }
-  
-  td {
-    font-size: 1.5rem;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Add animation to the background gradient */
-  @keyframes gradient {
-    0% {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg, #ff00cc, #3300ff, #ffcc00, #00ffcc);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+/* 3D effect on the header */
+h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), -2px -2px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+/* Style the input and button */
+input, button {
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+input:focus, button:hover {
+  transform: scale(1.1);
+  background-color: #ff00cc;
+  cursor: pointer;
+}
+
+/* Add 3D effect to the table */
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 50%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+th, td {
+  border: 2px solid #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+td {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Add animation to the background gradient */
+@keyframes gradient {
+  0% {
       background-position: 0% 50%;
-    }
-    50% {
+  }
+  50% {
       background-position: 100% 50%;
-    }
-    100% {
+  }
+  100% {
       background-position: 0% 50%;
-    }
-  }
-
-  footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
-    color: white;
-    text-align: left;
-    padding: 10px 20px;
-    font-size: 1rem;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
-    z-index: 1000; /* Ensures footer is on top */
-  }
-  
-/* Mobile Styles */
-@media screen and (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  input, button {
-    width: 100%; /* Make both input and button take full width */
-    font-size: 1rem;
-    margin: 5px 0; /* Add a little margin for spacing */
-  }
-
-  table {
-    width: 100%;
-  }
-
-  th, td {
-    font-size: 1.2rem;
   }
 }
 
-  /* Footer Styles */
+/* Footer Styles */
+footer {
+  position: static; /* Footer moves with page content */
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+  color: white;
+  text-align: center; /* Center-align text */
+  padding: 5px 20px; /* Smaller padding for a small footer */
+  font-size: 0.8rem; /* Smaller font size */
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+}
 
-  
+.content-wrapper {
+  min-height: calc(100vh - 60px); /* Adjust for smaller footer height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Allow space for footer */
+  padding-bottom: 60px; /* Add space at the bottom for footer */
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 600px) {
+  body {
+      padding: 10px;
+  }
+
+  h1 {
+      font-size: 2rem;
+  }
+
+  input, button {
+      width: 100%;
+      font-size: 1rem;
+  }
+
+  table {
+      width: 100%;
+  }
+
+  th, td {
+      font-size: 1.2rem;
+  }
+}

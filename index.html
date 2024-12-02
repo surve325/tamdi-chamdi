@@ -3,41 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Night Our Words</title>
-  <link rel="stylesheet" href="style.css"> <!-- Link to the new CSS file -->
+  <title>Night Out Words</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- Custom CSS -->
 </head>
-<body>
-  <h1>Night Out Dictionary</h1>
-  <audio id="audioPlayer" controls>
-     <!-- <source src="./song/Tambdi.mp3" type="audio/mp3"> -->
-     <source src="https://marathiremix.in/upload_file/452/453/913/2307/Tambdi_Chamdi.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
-  
-  <script>
-    window.onload = function() {
-      var audioPlayer = document.getElementById("audioPlayer");
-      audioPlayer.play(); // This will trigger autoplay once the page is loaded
-    };
-  </script>
+<body class="bg-dark text-white">
+  <header class="bg-primary text-white py-3">
+    <div class="container text-center">
+      <h1>Night Out Dictionary</h1>
+    </div>
+  </header>
 
-  <p>Add a new word to the list below!</p>
-  <input type="text" id="wordInput" placeholder="Enter a word" />
-  <button onclick="addWord()">Add Word</button>
-  <h2>Total Words: <span id="wordCount">0</span></h2>
-  <table>
-    <thead>
-      <tr>
-        <th><i>Total New Words in dictionary</i></th>
-      </tr>
-    </thead>
-    <tbody id="wordList"></tbody>
-  </table>
+  <div class="container mt-5 pt-5 content-wrapper">
+    <div class="my-3">
+      <audio id="audioPlayer" controls>
+        <source src="https://marathiremix.in/upload_file/452/453/913/2307/Tambdi_Chamdi.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    
+    <p class="mt-3">Add a new word to the list below!</p>
+    <div class="input-group mb-3">
+      <input type="text" id="wordInput" class="form-control" placeholder="Enter a word">
+      <div class="input-group-append">
+        <button class="btn btn-primary" onclick="addWord()">Add Word</button>
+      </div>
+    </div>
+    <h2>Total Words: <span id="wordCount" class="badge badge-info">0</span></h2>
+    <table class="table table-bordered table-dark mt-4">
+      <thead>
+        <tr>
+          <th><i>Total New Words in Dictionary</i></th>
+        </tr>
+      </thead>
+      <tbody id="wordList"></tbody>
+    </table>
+  </div>
 
   <!-- Footer Section -->
-  <footer>
-    <p>Created by Mahesh Surve</p>
+  <footer class="bg-transparent text-left p-2 fixed-bottom">
+    <div class="container">
+      <p>Created by Mahesh Surve  &copy; <B>All rights reserved by nightout partners & Company Private Limited.</B></p>
+    </div>
   </footer>
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
     const apiUrl = "https://script.google.com/macros/s/AKfycbxLIoG6qRrNUjfHmO8gcqfmtYhgnpJf7qGM54YbU6qsVacrA8v1J7dLz2DaL65cdfYjSw/exec"; // Replace with your URL
